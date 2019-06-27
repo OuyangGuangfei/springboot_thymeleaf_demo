@@ -48,9 +48,4 @@ public class StuController {
         return "redirect:/stu/list";
     }
 
-    @RequestMapping("/updade")
-    public String update(Student student){
-        return  null;
-    }
-
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>hello Servlet</h1>
+    <a th:text="${name}"></a>
+    <!--th:动态解析时，会把值放到th:标签中-->
+    <input name="name" th:value="${name}" value="默认值"/>
+    [[${name}]]
+    <hr/>
+    <a th:if="${age<18}">未成年</a>
+    <a th:if="${age>=18 && age<40}">成年</a>
+    <a th:if="${age>=40 && age<60}">中年</a>
+    <a th:if="${age>=60}">老年</a>
+
+    <hr/>
+    <a th:switch="${score}">
+        <a th:case="A">优秀</a>
+        <a th:case="B">良好</a>
+        <a th:case="C">及格</a>
+        <a th:case="D">回家</a>
+    </a>
+    <hr/>
+    <table>
+        <tr>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>生日</td>
+        </tr>
+        <tr th:each="stu : ${list}">
+            <td th:text="|够${stu.id}|">编号</td>
+            <td th:text="${'号'+stu.name}">姓名</td>
+            <td th:text="${#dates.format(stu.bithday,'yyyy-MM-dd HH-mm-ss')}">生日</td>
+        </tr>
+    </table>
+</body>
+</html>

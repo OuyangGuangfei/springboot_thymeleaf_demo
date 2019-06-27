@@ -1,0 +1,83 @@
+thymeleaf(形式)
+1.th:的用法
+th:id  替换id
+th:text 文本替换你
+th:object 替换对象
+th:value  属性替换
+th:each 属性赋值
+th:if 判断条件
+th:unless 和if 判断相反
+th:href 链接体制
+th:switch多线路配合 th:case 使用
+
+字符拼接：两种形式
+1.th:text="${'号'+name}"
+2.th:text="|每${name}|"
+
+
+
+
+SpringBoot-mybatis-plus整合
+1.添加一个
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.1.2</version>
+        </dependency>
+2.在Dao层mapper映射接口继承BaseMapper类，mapper.xml也不用写
+3.在启动类添加扫描注解类（@SpringBootApplication(scanBasePackages="com.qf")）(@MapperScam("com.qf.dao"))//扫描接口映射
+4.entity,Dao,Service,Controller
+5.前端页面（thymeleaf:each(遍历)，接受数值，传参，字符串拼接）
+
+mysql数据库触发器
+create Trigger stu_trigger after update on t_student for each now begin
+update t_class set csum = csum+1 where id = new.cid;
+end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

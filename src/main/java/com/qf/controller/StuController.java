@@ -48,4 +48,9 @@ public class StuController {
         return "redirect:/stu/list";
     }
 
+    @RequestMapping("/queryone/{id}")
+    public String queryById(Integer id){
+        return  null;
+    }
+
 }
